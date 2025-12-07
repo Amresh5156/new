@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Flow Diagram - Adaptive Learning System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+            background: white;
+            margin: 20px 0;
+        }
+        .flow-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .flow-section h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .flow-section p {
+            color: #34495e;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Data Flow Diagram (DFD)</h1>
+        <p class="subtitle">Adaptive Learning System Data Processes</p>
+        
+        <!-- Level 0: Context Diagram -->
+        <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+            <text x="500" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Level 0: Context Diagram</text>
+            
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#34495e" />
+                </marker>
+            </defs>
+            
+            <!-- Actors -->
+            <circle cx="150" cy="200" r="50" fill="#e8f4f8" stroke="#3498db" stroke-width="2"/>
+            <text x="150" y="200" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Student</text>
+            
+            <circle cx="850" cy="200" r="50" fill="#fadbd8" stroke="#e74c3c" stroke-width="2"/>
+            <text x="850" y="200" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Database</text>
+            
+            <!-- System -->
+            <rect x="350" y="100" width="300" height="200" fill="#fff3cd" stroke="#f39c12" stroke-width="2" rx="5"/>
+            <text x="500" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Adaptive</text>
+            <text x="500" y="170" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Learning</text>
+            <text x="500" y="190" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">System</text>
+            
+            <!-- Arrows -->
+            <line x1="200" y1="200" x2="350" y2="200" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <text x="270" y="185" font-size="10" fill="#2c3e50">Requests</text>
+            
+            <line x1="650" y1="200" x2="800" y2="200" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <text x="700" y="185" font-size="10" fill="#2c3e50">Queries</text>
+            
+            <line x1="800" y1="250" x2="650" y2="250" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <text x="700" y="270" font-size="10" fill="#2c3e50">Data Response</text>
+            
+            <line x1="350" y1="250" x2="200" y2="250" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <text x="250" y="270" font-size="10" fill="#2c3e50">Results</text>
+        </svg>
+        
+        <!-- Level 1: Main Processes -->
+        <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+            <text x="600" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Level 1: Main Processes</text>
+            
+            <!-- External Entity: Student -->
+            <circle cx="100" cy="300" r="50" fill="#e8f4f8" stroke="#3498db" stroke-width="2"/>
+            <text x="100" y="300" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Student</text>
+            
+            <!-- Processes -->
+            <rect x="300" y="80" width="140" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="370" y="110" font-size="11" font-weight="bold" text-anchor="middle" fill="white">P1: User</text>
+            <text x="370" y="128" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Management</text>
+            <text x="370" y="146" font-size="10" text-anchor="middle" fill="white">&amp; Tracking</text>
+            
+            <rect x="300" y="200" width="140" height="80" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="370" y="230" font-size="11" font-weight="bold" text-anchor="middle" fill="white">P2: Quiz</text>
+            <text x="370" y="248" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Generation</text>
+            <text x="370" y="266" font-size="10" text-anchor="middle" fill="white">&amp; Scoring</text>
+            
+            <rect x="300" y="320" width="140" height="80" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="370" y="350" font-size="11" font-weight="bold" text-anchor="middle" fill="white">P3: Analytics</text>
+            <text x="370" y="368" font-size="11" font-weight="bold" text-anchor="middle" fill="white">&amp; Weak Area</text>
+            <text x="370" y="386" font-size="10" text-anchor="middle" fill="white">Detection</text>
+            
+            <rect x="300" y="440" width="140" height="80" fill="#9b59b6" stroke="#7d3c98" stroke-width="2" rx="4"/>
+            <text x="370" y="470" font-size="11" font-weight="bold" text-anchor="middle" fill="white">P4:</text>
+            <text x="370" y="488" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Recommendations</text>
+            <text x="370" y="506" font-size="10" text-anchor="middle" fill="white">Engine</text>
+            
+            <!-- Data Stores -->
+            <rect x="700" y="80" width="140" height="60" fill="#e8f4f8" stroke="#3498db" stroke-width="2" rx="4"/>
+            <text x="770" y="105" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">D1: User</text>
+            <text x="770" y="123" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Data</text>
+            
+            <rect x="700" y="180" width="140" height="60" fill="#d5f4e6" stroke="#27ae60" stroke-width="2" rx="4"/>
+            <text x="770" y="205" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">D2: Topics &amp;</text>
+            <text x="770" y="223" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Progress</text>
+            
+            <rect x="700" y="280" width="140" height="60" fill="#fadbd8" stroke="#e74c3c" stroke-width="2" rx="4"/>
+            <text x="770" y="305" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">D3: Quiz &amp;</text>
+            <text x="770" y="323" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Questions</text>
+            
+            <rect x="700" y="380" width="140" height="60" fill="#f0e68c" stroke="#f39c12" stroke-width="2" rx="4"/>
+            <text x="770" y="405" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">D4: Analytics &amp;</text>
+            <text x="770" y="423" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Cache</text>
+            
+            <!-- Arrows connecting -->
+            <!-- Student to processes -->
+            <line x1="150" y1="250" x2="300" y2="120" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="150" y1="300" x2="300" y2="240" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="150" y1="350" x2="300" y2="360" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            
+            <!-- Processes to data stores -->
+            <line x1="440" y1="120" x2="700" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="440" y1="240" x2="700" y2="210" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="440" y1="360" x2="700" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="440" y1="480" x2="700" y2="410" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            
+            <!-- Results back to student -->
+            <line x1="300" y1="350" x2="150" y2="350" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+        </svg>
+        
+        <!-- Level 2: Detailed Quiz Process -->
+        <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+            <text x="600" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Level 2: Quiz Taking Process (Detailed)</text>
+            
+            <circle cx="80" cy="250" r="40" fill="#e8f4f8" stroke="#3498db" stroke-width="2"/>
+            <text x="80" y="250" font-size="10" font-weight="bold" text-anchor="middle" fill="#2c3e50">Student</text>
+            
+            <rect x="200" y="150" width="120" height="70" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="260" y="170" font-size="10" font-weight="bold" text-anchor="middle" fill="white">2.1: Generate</text>
+            <text x="260" y="188" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Questions</text>
+            <text x="260" y="204" font-size="9" text-anchor="middle" fill="white">(ML-Based)</text>
+            
+            <rect x="200" y="270" width="120" height="70" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="260" y="290" font-size="10" font-weight="bold" text-anchor="middle" fill="white">2.2: Record</text>
+            <text x="260" y="308" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Responses</text>
+            <text x="260" y="324" font-size="9" text-anchor="middle" fill="white">&amp; Timing</text>
+            
+            <rect x="420" y="150" width="120" height="70" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="480" y="170" font-size="10" font-weight="bold" text-anchor="middle" fill="white">2.3: Calculate</text>
+            <text x="480" y="188" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Score &amp;</text>
+            <text x="480" y="204" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Accuracy</text>
+            
+            <rect x="420" y="270" width="120" height="70" fill="#9b59b6" stroke="#7d3c98" stroke-width="2" rx="4"/>
+            <text x="480" y="290" font-size="10" font-weight="bold" text-anchor="middle" fill="white">2.4: Update</text>
+            <text x="480" y="308" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Progress &amp;</text>
+            <text x="480" y="324" font-size="9" text-anchor="middle" fill="white">Mastery</text>
+            
+            <rect x="640" y="210" width="120" height="70" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="4"/>
+            <text x="700" y="230" font-size="10" font-weight="bold" text-anchor="middle" fill="white">2.5: Store in</text>
+            <text x="700" y="248" font-size="10" font-weight="bold" text-anchor="middle" fill="white">Database</text>
+            <text x="700" y="264" font-size="9" text-anchor="middle" fill="white">&amp; Cache</text>
+            
+            <!-- Arrow flow -->
+            <line x1="120" y1="250" x2="200" y2="185" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="260" y1="220" x2="260" y2="270" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="320" y1="185" x2="420" y2="185" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="480" y1="220" x2="480" y2="270" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="540" y1="305" x2="640" y2="245" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="700" y1="210" x2="80" y2="250" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <text x="350" y="260" font-size="9" fill="#2c3e50">Results</text>
+        </svg>
+        
+        <div class="flow-section">
+            <h3>📊 Key Data Flows:</h3>
+            <p><strong>1. Student Input Flow:</strong> Student initiates requests (login, quiz, analytics) → System processes → Database queries</p>
+            <p><strong>2. Quiz Taking Flow:</strong> Questions generated → Student answers recorded → Score calculated → Progress updated → Data stored</p>
+            <p><strong>3. Analytics Flow:</strong> Performance data retrieved → ML analysis performed → Weak areas identified → Recommendations generated</p>
+            <p><strong>4. Recommendation Flow:</strong> User profile analyzed → Content matched → Resources scored → Results returned to student</p>
+        </div>
+        
+        <div class="flow-section">
+            <h3>💾 Data Stores:</h3>
+            <ul style="line-height: 1.8; margin-left: 20px;">
+                <li><strong>D1 - User Data:</strong> Profiles, preferences, authentication info</li>
+                <li><strong>D2 - Topics & Progress:</strong> Learning topics, user progress per topic, mastery levels</li>
+                <li><strong>D3 - Quiz & Questions:</strong> Quiz attempts, questions, answers, scoring data</li>
+                <li><strong>D4 - Analytics & Cache:</strong> Cached analytics, weak area data, recommendation history</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

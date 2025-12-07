@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Case Diagram - Adaptive Learning System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+            background: white;
+            margin: 20px 0;
+        }
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .use-case-card {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .use-case-card h4 {
+            margin: 0 0 12px 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .use-case-card p {
+            margin: 8px 0;
+            color: #34495e;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .actor-section {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .actor-section strong {
+            color: #2c3e50;
+        }
+        .precondition, .postcondition {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 8px 0;
+            border-left: 3px solid #f39c12;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎭 Use Case Diagram</h1>
+        <p class="subtitle">Adaptive Learning System User Interactions</p>
+        
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#34495e" />
+                </marker>
+            </defs>
+            
+            <!-- Title -->
+            <text x="600" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Adaptive Learning System Use Cases</text>
+            
+            <!-- System Boundary -->
+            <rect x="300" y="80" width="600" height="680" fill="none" stroke="#2c3e50" stroke-width="2" rx="10"/>
+            <text x="900" y="100" font-size="12" fill="#2c3e50">Adaptive Learning</text>
+            <text x="900" y="115" font-size="12" fill="#2c3e50">System</text>
+            
+            <!-- Actor: Student -->
+            <circle cx="120" cy="400" r="40" fill="#e8f4f8" stroke="#3498db" stroke-width="2"/>
+            <text x="120" y="400" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Student</text>
+            <text x="120" y="450" font-size="11" text-anchor="middle" fill="#2c3e50">Primary Actor</text>
+            
+            <!-- Use Case 1: View Dashboard -->
+            <ellipse cx="450" cy="150" rx="80" ry="40" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <text x="450" y="150" font-size="11" font-weight="bold" text-anchor="middle" fill="white">View</text>
+            <text x="450" y="165" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Dashboard</text>
+            
+            <!-- Use Case 2: Take Quiz -->
+            <ellipse cx="450" cy="280" rx="80" ry="40" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+            <text x="450" y="280" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Take</text>
+            <text x="450" y="295" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Quiz</text>
+            
+            <!-- Use Case 3: View Analytics -->
+            <ellipse cx="450" cy="410" rx="80" ry="40" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+            <text x="450" y="410" font-size="11" font-weight="bold" text-anchor="middle" fill="white">View</text>
+            <text x="450" y="425" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Analytics</text>
+            
+            <!-- Use Case 4: Get Recommendations -->
+            <ellipse cx="450" cy="540" rx="80" ry="40" fill="#9b59b6" stroke="#7d3c98" stroke-width="2"/>
+            <text x="450" y="540" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Get</text>
+            <text x="450" y="555" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Recommendations</text>
+            
+            <!-- Use Case 5: Manage Notes -->
+            <ellipse cx="450" cy="670" rx="80" ry="40" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+            <text x="450" y="670" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Manage</text>
+            <text x="450" y="685" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Notes</text>
+            
+            <!-- Use Case 6: Browse Content -->
+            <ellipse cx="750" cy="400" rx="80" ry="40" fill="#16a085" stroke="#117a65" stroke-width="2"/>
+            <text x="750" y="395" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Browse</text>
+            <text x="750" y="410" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Content</text>
+            <text x="750" y="425" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Library</text>
+            
+            <!-- Connections -->
+            <!-- Student to Use Cases -->
+            <line x1="160" y1="250" x2="370" y2="150" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="160" y1="330" x2="370" y2="280" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="160" y1="400" x2="370" y2="410" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="160" y1="470" x2="370" y2="540" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            <line x1="160" y1="550" x2="370" y2="670" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+            
+            <!-- Use Case 2 includes subflows -->
+            <line x1="530" y1="280" x2="670" y2="280" stroke="#34495e" stroke-width="1" stroke-dasharray="5,5"/>
+            <text x="590" y="275" font-size="9" fill="#34495e">&lt;&lt;include&gt;&gt;</text>
+            
+            <!-- Relationships between use cases -->
+            <line x1="450" y1="190" x2="450" y2="240" stroke="#34495e" stroke-width="1" stroke-dasharray="5,5"/>
+            <text x="460" y="220" font-size="9" fill="#34495e">&lt;&lt;extends&gt;&gt;</text>
+        </svg>
+        
+        <div class="use-cases-grid">
+            <!-- Use Case 1: View Dashboard -->
+            <div class="use-case-card">
+                <h4>1️⃣ View Learning Dashboard</h4>
+                <div class="actor-section">
+                    <strong>Actor:</strong> Student
+                </div>
+                <p><strong>Description:</strong> Student logs in and views their personalized learning dashboard showing progress overview, topic mastery levels, and quick access to learning modules.</p>
+                <div class="precondition">
+                    <strong>Precondition:</strong> Student is authenticated and has started learning
+                </div>
+                <p><strong>Main Flow:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>1. Display overall progress percentage</li>
+                    <li>2. Show topic-wise mastery levels</li>
+                    <li>3. Display recent activity</li>
+                    <li>4. Show quick action buttons</li>
+                </ul>
+                <div class="postcondition">
+                    <strong>Postcondition:</strong> Dashboard loaded with user's data
+                </div>
+            </div>
+            
+            <!-- Use Case 2: Take Quiz -->
+            <div class="use-case-card">
+                <h4>2️⃣ Take Personalized Quiz</h4>
+                <div class="actor-section">
+                    <strong>Actor:</strong> Student
+                </div>
+                <p><strong>Description:</strong> Student selects a topic and takes an AI-generated quiz. The system adapts question difficulty based on performance and provides feedback.</p>
+                <div class="precondition">
+                    <strong>Precondition:</strong> Student selects a topic to be quizzed on
+                </div>
+                <p><strong>Main Flow:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>1. AI generates 10-15 questions</li>
+                    <li>2. Student answers questions</li>
+                    <li>3. System scores responses</li>
+                    <li>4. Update progress and mastery</li>
+                    <li>5. Show results with feedback</li>
+                </ul>
+                <div class="postcondition">
+                    <strong>Postcondition:</strong> Quiz completed, progress updated, results displayed
+                </div>
+            </div>
+            
+            <!-- Use Case 3: View Analytics -->
+            <div class="use-case-card">
+                <h4>3️⃣ View Performance Analytics</h4>
+                <div class="actor-section">
+                    <strong>Actor:</strong> Student
+                </div>
+                <p><strong>Description:</strong> Student views detailed analytics including performance trends, weak areas identified by ML algorithm, and learning insights.</p>
+                <div class="precondition">
+                    <strong>Precondition:</strong> Student has completed at least 3 quizzes
+                </div>
+                <p><strong>Main Flow:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>1. Retrieve performance data</li>
+                    <li>2. Run ML analysis</li>
+                    <li>3. Identify weak areas</li>
+                    <li>4. Generate insights</li>
+                    <li>5. Display visualizations</li>
+                </ul>
+                <div class="postcondition">
+                    <strong>Postcondition:</strong> Analytics displayed with actionable insights
+                </div>
+            </div>
+            
+            <!-- Use Case 4: Get Recommendations -->
+            <div class="use-case-card">
+                <h4>4️⃣ Get Smart Recommendations</h4>
+                <div class="actor-section">
+                    <strong>Actor:</strong> Student, External Services (YouTube, GitHub)
+                </div>
+                <p><strong>Description:</strong> System analyzes weak areas and recommends YouTube tutorials and GitHub repositories for supplemental learning.</p>
+                <div class="precondition">
+                    <strong>Precondition:</strong> Weak areas have been identified in analytics
+                </div>
+                <p><strong>Main Flow:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>1. Get weak area topics</li>
+                    <li>2. Search YouTube &amp; GitHub</li>
+                    <li>3. Score recommendations</li>
+                    <li>4. Sort by relevance</li>
+                    <li>5. Display results</li>
+                </ul>
+                <div class="postcondition">
+                    <strong>Postcondition:</strong> Recommendations displayed with links
+                </div>
+            </div>
+            
+            <!-- Use Case 5: Manage Notes -->
+            <div class="use-case-card">
+                <h4>5️⃣ Create &amp; Manage Notes</h4>
+                <div class="actor-section">
+                    <strong>Actor:</strong> Student
+                </div>
+                <p><strong>Description:</strong> Student can create, edit, organize, and delete personal study notes organized by topic.</p>
+                <div class="precondition">
+                    <strong>Precondition:</strong> Student is viewing a topic
+                </div>
+                <p><strong>Main Flow:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>1. Create new note</li>
+                    <li>2. Add title and content</li>
+                    <li>3. Assign to topic</li>
+                    <li>4. Save to database</li>
+                    <li>5. View/edit/delete anytime</li>
+                </ul>
+                <div class="postcondition">
+                    <strong>Postcondition:</strong> Notes saved and retrievable
+                </div>
+            </div>
+            
+            <!-- Use Case 6: Browse Content -->
+            <div class="use-case-card">
+                <h4>6️⃣ Browse Content Library</h4>
+                <div class="actor-section">
+                    <strong>Actor:</strong> Student
+                </div>
+                <p><strong>Description:</strong> Student browses the content library with various learning resources, coding tutorials, and DSA explanations organized by difficulty.</p>
+                <div class="precondition">
+                    <strong>Precondition:</strong> Student accesses content library
+                </div>
+                <p><strong>Main Flow:</strong></p>
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>1. Display content categories</li>
+                    <li>2. Filter by difficulty</li>
+                    <li>3. Search content</li>
+                    <li>4. View descriptions</li>
+                    <li>5. Mark as completed</li>
+                </ul>
+                <div class="postcondition">
+                    <strong>Postcondition:</strong> Content selected and studied
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f0e68c; border-left: 4px solid #f39c12; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #2c3e50;">📋 Key Relationships:</h3>
+            <ul style="line-height: 1.8; color: #34495e;">
+                <li><strong>&lt;&lt;include&gt;&gt;:</strong> One use case always includes another (e.g., View Analytics includes ML Analysis)</li>
+                <li><strong>&lt;&lt;extends&gt;&gt;:</strong> One use case may extend another under certain conditions</li>
+                <li><strong>Actor:</strong> External entities (Student) that interact with the system</li>
+                <li><strong>System Boundary:</strong> The box showing all use cases within the system scope</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

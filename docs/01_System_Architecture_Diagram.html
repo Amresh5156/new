@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Architecture Diagram - Adaptive Learning System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ecf0f1;
+            border-radius: 4px;
+            background: white;
+        }
+        .legend {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .legend-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .legend-item h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+        .legend-item p {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 8px 0;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ System Architecture Diagram</h1>
+        <p class="subtitle">Adaptive Learning System (AI Tutor)</p>
+        
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <!-- Title -->
+            <text x="600" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c3e50">System Architecture Overview</text>
+            
+            <!-- Client Layer -->
+            <rect x="50" y="80" width="1100" height="150" fill="#e8f4f8" stroke="#3498db" stroke-width="2" rx="5"/>
+            <text x="60" y="105" font-size="14" font-weight="bold" fill="#2c3e50">CLIENT LAYER (Frontend)</text>
+            
+            <rect x="80" y="120" width="150" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="155" y="150" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Landing Page</text>
+            <text x="155" y="170" font-size="10" text-anchor="middle" fill="white">Next.js + React</text>
+            
+            <rect x="270" y="120" width="150" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="345" y="150" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Dashboard</text>
+            <text x="345" y="170" font-size="10" text-anchor="middle" fill="white">Progress Tracking</text>
+            
+            <rect x="460" y="120" width="150" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="535" y="150" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Quiz Interface</text>
+            <text x="535" y="170" font-size="10" text-anchor="middle" fill="white">Question Display</text>
+            
+            <rect x="650" y="120" width="150" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="725" y="150" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Analytics</text>
+            <text x="725" y="170" font-size="10" text-anchor="middle" fill="white">Performance View</text>
+            
+            <rect x="840" y="120" width="150" height="80" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="4"/>
+            <text x="915" y="150" font-size="12" font-weight="bold" text-anchor="middle" fill="white">Recommendations</text>
+            <text x="915" y="170" font-size="10" text-anchor="middle" fill="white">Content Suggest</text>
+            
+            <!-- API Layer -->
+            <rect x="50" y="270" width="1100" height="140" fill="#f0e68c" stroke="#f39c12" stroke-width="2" rx="5"/>
+            <text x="60" y="295" font-size="14" font-weight="bold" fill="#2c3e50">API LAYER (Backend)</text>
+            
+            <rect x="80" y="310" width="140" height="75" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="150" y="335" font-size="11" font-weight="bold" text-anchor="middle" fill="white">/api/quiz/</text>
+            <text x="150" y="350" font-size="9" text-anchor="middle" fill="white">generate</text>
+            <text x="150" y="363" font-size="9" text-anchor="middle" fill="white">submit</text>
+            
+            <rect x="260" y="310" width="140" height="75" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="330" y="335" font-size="11" font-weight="bold" text-anchor="middle" fill="white">/api/analytics/</text>
+            <text x="330" y="350" font-size="9" text-anchor="middle" fill="white">weak-areas</text>
+            <text x="330" y="363" font-size="9" text-anchor="middle" fill="white">refresh</text>
+            
+            <rect x="440" y="310" width="140" height="75" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="510" y="335" font-size="11" font-weight="bold" text-anchor="middle" fill="white">/api/recommendations/</text>
+            <text x="510" y="350" font-size="9" text-anchor="middle" fill="white">generate</text>
+            <text x="510" y="363" font-size="9" text-anchor="middle" fill="white">filter</text>
+            
+            <rect x="620" y="310" width="140" height="75" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="690" y="335" font-size="11" font-weight="bold" text-anchor="middle" fill="white">/api/notes/</text>
+            <text x="690" y="350" font-size="9" text-anchor="middle" fill="white">create</text>
+            <text x="690" y="363" font-size="9" text-anchor="middle" fill="white">update</text>
+            
+            <rect x="800" y="310" width="140" height="75" fill="#f39c12" stroke="#d68910" stroke-width="2" rx="4"/>
+            <text x="870" y="335" font-size="11" font-weight="bold" text-anchor="middle" fill="white">/api/content/</text>
+            <text x="870" y="350" font-size="9" text-anchor="middle" fill="white">browse</text>
+            <text x="870" y="363" font-size="9" text-anchor="middle" fill="white">search</text>
+            
+            <!-- Business Logic Layer -->
+            <rect x="50" y="450" width="1100" height="140" fill="#d5f4e6" stroke="#27ae60" stroke-width="2" rx="5"/>
+            <text x="60" y="475" font-size="14" font-weight="bold" fill="#2c3e50">BUSINESS LOGIC LAYER</text>
+            
+            <rect x="80" y="495" width="160" height="75" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="160" y="520" font-size="11" font-weight="bold" text-anchor="middle" fill="white">ML Analysis</text>
+            <text x="160" y="535" font-size="9" text-anchor="middle" fill="white">Weak Area Detection</text>
+            <text x="160" y="548" font-size="9" text-anchor="middle" fill="white">Performance Analysis</text>
+            
+            <rect x="290" y="495" width="160" height="75" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="370" y="520" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Quiz Engine</text>
+            <text x="370" y="535" font-size="9" text-anchor="middle" fill="white">Question Generation</text>
+            <text x="370" y="548" font-size="9" text-anchor="middle" fill="white">Difficulty Adaptation</text>
+            
+            <rect x="500" y="495" width="160" height="75" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="580" y="520" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Recommendation</text>
+            <text x="580" y="535" font-size="9" text-anchor="middle" fill="white">Content Matching</text>
+            <text x="580" y="548" font-size="9" text-anchor="middle" fill="white">Personalization</text>
+            
+            <rect x="710" y="495" width="160" height="75" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="790" y="520" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Progress Tracking</text>
+            <text x="790" y="535" font-size="9" text-anchor="middle" fill="white">Score Calculation</text>
+            <text x="790" y="548" font-size="9" text-anchor="middle" fill="white">Mastery Updates</text>
+            
+            <rect x="920" y="495" width="160" height="75" fill="#27ae60" stroke="#1e8449" stroke-width="2" rx="4"/>
+            <text x="1000" y="520" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Notes Manager</text>
+            <text x="1000" y="535" font-size="9" text-anchor="middle" fill="white">CRUD Operations</text>
+            <text x="1000" y="548" font-size="9" text-anchor="middle" fill="white">Organization</text>
+            
+            <!-- Data Layer -->
+            <rect x="50" y="630" width="1100" height="120" fill="#fadbd8" stroke="#e74c3c" stroke-width="2" rx="5"/>
+            <text x="60" y="655" font-size="14" font-weight="bold" fill="#2c3e50">DATA LAYER (Database & Storage)</text>
+            
+            <rect x="80" y="675" width="200" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="4"/>
+            <text x="180" y="700" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Supabase PostgreSQL</text>
+            <text x="180" y="717" font-size="9" text-anchor="middle" fill="white">Users, Topics, Progress</text>
+            
+            <rect x="350" y="675" width="200" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="4"/>
+            <text x="450" y="700" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Quiz & Questions DB</text>
+            <text x="450" y="717" font-size="9" text-anchor="middle" fill="white">Questions, Answers</text>
+            
+            <rect x="620" y="675" width="200" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="4"/>
+            <text x="720" y="700" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Notes & Content</text>
+            <text x="720" y="717" font-size="9" text-anchor="middle" fill="white">Recommendations Data</text>
+            
+            <rect x="890" y="675" width="200" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="4"/>
+            <text x="990" y="700" font-size="11" font-weight="bold" text-anchor="middle" fill="white">Analytics Cache</text>
+            <text x="990" y="717" font-size="9" text-anchor="middle" fill="white">Performance Metrics</text>
+            
+            <!-- Arrows showing data flow -->
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#34495e" />
+                </marker>
+            </defs>
+            
+            <!-- Client to API arrows -->
+            <line x1="155" y1="200" x2="150" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="345" y1="200" x2="330" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="535" y1="200" x2="510" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="725" y1="200" x2="690" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="915" y1="200" x2="870" y2="310" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            
+            <!-- API to Business Logic arrows -->
+            <line x1="150" y1="385" x2="160" y2="495" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="330" y1="385" x2="370" y2="495" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="510" y1="385" x2="580" y2="495" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="690" y1="385" x2="790" y2="495" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="870" y1="385" x2="1000" y2="495" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            
+            <!-- Business Logic to Data arrows -->
+            <line x1="160" y1="570" x2="180" y2="675" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="370" y1="570" x2="450" y2="675" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="580" y1="570" x2="720" y2="675" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <line x1="790" y1="570" x2="990" y2="675" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+        </svg>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <h4>Client Layer (Blue)</h4>
+                <p>User interface components built with Next.js and React</p>
+            </div>
+            <div class="legend-item">
+                <h4>API Layer (Yellow)</h4>
+                <p>RESTful endpoints handling requests from frontend</p>
+            </div>
+            <div class="legend-item">
+                <h4>Business Logic (Green)</h4>
+                <p>Core algorithms and processing functions</p>
+            </div>
+            <div class="legend-item">
+                <h4>Data Layer (Red)</h4>
+                <p>Database and persistent storage using Supabase</p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📥 How to Download and Convert to PDF/JPG:</h3>
+            <ol>
+                <li><strong>Download HTML File:</strong> Right-click on this file in the Code Project → Download</li>
+                <li><strong>Open in Browser:</strong> Double-click the downloaded HTML file to open in your browser</li>
+                <li><strong>Convert to PDF:</strong> Press Ctrl+P (or Cmd+P on Mac) → Select "Save as PDF" → Choose location</li>
+                <li><strong>Convert to JPG:</strong> Use Print Screen or screenshot tool → Open in image editor → Save as JPG</li>
+                <li><strong>Alternative for JPG:</strong> Use online HTML-to-JPG converter or Snagit/similar tool</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
