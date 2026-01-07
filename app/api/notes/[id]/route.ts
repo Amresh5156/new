@@ -1,9 +1,10 @@
-import { createServerClient } from "@/lib/server"
+import { createClient } from "@/lib/server"
 import { type NextRequest, NextResponse } from "next/server"
 
+//for updating the notes 
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const supabase = createServerClient()
+    const supabase = await createClient()
 
     const {
       data: { user },
@@ -29,20 +30,21 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       .single()
 
     if (error) {
-      console.error("[v0] Error updating note:", error)
+      console.error(" Error updating note:", error)
       return NextResponse.json({ error: "Failed to update note" }, { status: 500 })
     }
 
     return NextResponse.json({ note })
   } catch (error) {
-    console.error("[v0] Error in update note API:", error)
+    console.error("[ Error in update note API:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }
 
+//for deleteing the notes
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const supabase = createServerClient()
+    const supabase = createClient()
 
     const {
       data: { user },
@@ -54,13 +56,13 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
     const { error } = await supabase.from("notes").delete().eq("id", params.id).eq("user_id", user.id)
 
     if (error) {
-      console.error("[v0] Error deleting note:", error)
+      console.error("[ Error deleting note:", error)
       return NextResponse.json({ error: "Failed to delete note" }, { status: 500 })
     }
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error("[v0] Error in delete note API:", error)
+    console.error(" Error in delete note API:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }

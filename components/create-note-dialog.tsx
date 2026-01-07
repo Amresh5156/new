@@ -11,7 +11,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label"
 import { Plus } from "lucide-react"
 
-export function CreateNoteDialog() {
+interface CreateNoteDialogProps {
+  className?: string
+  onNoteCreated: () => void
+}
+
+// This error occurs because the props parameter in the CreateNoteDialog function lacks an explicit type annotation. In strict TypeScript settings, not specifying the type for props can lead to a type error. Adding a type, such as `props: any` or providing a specific type/interface, resolves the issue.
+export function CreateNoteDialog({
+  className,
+  onNoteCreated,
+}: CreateNoteDialogProps) {
   const [open, setOpen] = useState(false)
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
@@ -21,6 +30,12 @@ export function CreateNoteDialog() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+
+    interface CreateNoteDialogProps {
+  className?: string
+  onNoteCreated: () => void
+}
+
 
     try {
       const response = await fetch("/api/notes/create", {
@@ -40,11 +55,10 @@ export function CreateNoteDialog() {
         setContent("")
         setTopicId("")
         setOpen(false)
-        // TODO: Refresh notes list
-        window.location.reload()
+        onNoteCreated()
       }
     } catch (error) {
-      console.error("[v0] Error creating note:", error)
+      console.error("Error creating note:", error)
     } finally {
       setIsLoading(false)
     }
@@ -54,10 +68,11 @@ export function CreateNoteDialog() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg"
+          className={className}
           size="icon"
         >
-          <Plus className="h-6 w-6" />
+          <Plus className="h-4 w-4" />
+          New Note
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[600px]">
@@ -110,8 +125,9 @@ export function CreateNoteDialog() {
             <Button type="button" variant="outline" onClick={() => setOpen(false)}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isLoading}>
+            <Button id="createNotes" type="submit" disabled={isLoading}>
               {isLoading ? "Creating..." : "Create Note"}
+              
             </Button>
           </div>
         </form>
@@ -119,3 +135,6 @@ export function CreateNoteDialog() {
     </Dialog>
   )
 }
+
+
+// classname=""fixed bottom-6 right-6 h-14 w-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg""

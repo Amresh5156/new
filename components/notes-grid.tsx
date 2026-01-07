@@ -8,6 +8,7 @@ import { MoreHorizontal, Edit, Trash2, Star, Clock, BookOpen } from "lucide-reac
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { formatDistanceToNow } from "date-fns"
 
+
 interface Note {
   id: string
   title: string
@@ -31,12 +32,12 @@ export function NotesGrid({ notes }: NotesGridProps) {
 
   const toggleFavorite = async (noteId: string) => {
     // TODO: Implement favorite toggle
-    console.log("[v0] Toggle favorite for note:", noteId)
+    console.log("Toggle favorite for note:", noteId)
   }
 
   const deleteNote = async (noteId: string) => {
     // TODO: Implement note deletion
-    console.log("[v0] Delete note:", noteId)
+    console.log("Delete note:", noteId)
   }
 
   if (notes.length === 0) {
